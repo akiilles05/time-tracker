@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Időnyilvántartó Rendszer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ez az alkalmazás egy egyszerű időnyilvántartó rendszer, amely lehetővé teszi a felhasználók számára, hogy munkaidő-bejegyzéseket hozzanak létre, szerkesszenek, töröljenek, és címkézzenek különböző kategóriák szerint. Az alkalmazás napi, heti és havi nézetben is képes megjeleníteni a bejegyzéseket. Ezen felül statisztikákat és diagramokat is nyújt az összesített munkaórák és kategória szerinti eloszlás megjelenítéséhez.
 
-## Available Scripts
+## Funkciók
 
-In the project directory, you can run:
+- **Munkaidő bejegyzések hozzáadása és szerkesztése**: Dátummal, kezdési és befejezési idővel, leírással és címkékkel.
+- **Nézetválasztó**: A bejegyzések napi, heti vagy havi nézetben jeleníthetők meg.
+- **Statisztikák és diagramok**:
+  - Összesített munkaórák megjelenítése.
+  - Kategóriák szerinti eloszlás (diagram).
+  - Bejegyzésszám napi, heti és havi nézetenként (diagram).
 
-### `npm start`
+## Telepítési útmutató
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Klonozd le a projektet**:
+   ```bash
+   git clone https://github.com/felhasznalonev/idonyilvantarto.git
+   cd idonyilvantarto
+   ```
+2. **Telepítsd a szükséges csomagokat**:
+   ```bash
+   npm install
+   ```
+3. **Indítsd el a projektet**:
+   ```bash
+   npm start
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Használat
 
-### `npm test`
+- **Bejegyzések létrehozása**: Töltsd ki az űrlapot a dátum, kezdési és befejezési idő, leírás és címke megadásával, majd kattints a "Mentés" gombra.
+- **Bejegyzések megtekintése**: Használhatod a nézetválasztót (Napi, Heti, Havi), hogy a bejegyzéseket lebontásban lásd. Minden időszakhoz külön csoportosítva jelennek meg a bejegyzések.
+- **Statisztikai nézetek**:
+  1. **Összesített munkaórák**: Megjeleníti a teljes munkaórák számát az összes bejegyzés alapján.
+  2. **Kategóriák szerinti eloszlás**: Pie-diagram mutatja a bejegyzések kategóriák szerinti megoszlását.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Főbb komponensek
 
-### `npm run build`
+- **App.js**: A fő komponens, amely kezeli az állapotokat és az alkalmazás logikáját.
+- **BejegyzesForm.js**: Bejegyzések hozzáadására és szerkesztésére szolgáló form.
+- **BejegyzesList.js**: A bejegyzések megjelenítése lebontásban a kiválasztott nézet (napi, heti vagy havi) szerint.
+- **Statistics.js**: Az összesített statisztikák és diagramok megjelenítésére szolgáló komponens.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Követelmények
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js**: A projekt fejlesztéséhez Node.js szükséges. Töltsd le a hivatalos oldalról.
+- **npm**: A Node.js-hez tartozik, és a szükséges csomagok telepítéséhez használjuk.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technológiák
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **React**: Az alkalmazás fő frontend keretrendszere.
+- **Tailwind CSS**: A modern és reszponzív felhasználói felülethez.
+- **Chart.js és react-chartjs-2**: A statisztikai diagramok megjelenítéséhez.
+- **date-fns**: Dátumkezelési műveletekhez, például napi, heti és havi szűréshez.
+- **localStorage**: Az adatok helyben tárolása és megőrzése újratöltés után.
